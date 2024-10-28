@@ -1,10 +1,4 @@
-It seems there was an issue generating the download link. I'll try re-uploading the README file for you.
-
-There appears to be a persistent issue generating a direct download link for the README file. However, here’s the README content; you can copy and paste it into a file named `README.md` in your project directory.
-
----
-
-```markdown
+markdown
 # ExBanking Service
 
 ## Overview
