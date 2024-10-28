@@ -1,0 +1,60 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+log/
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+.env.test
+.env.*.local
+
+# Testing
+coverage/
+nyc_output/
+.jest/
+
+# Temporary files and folders
+tmp/
+temp/
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Debugging files
+*.swp
+*.swo
+*.swn
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+out/
+/test-results/
+/playwright-report/
+
+# Dependency directories
+jspm_packages/
