@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package exbanking;
+
+service BankingService {
+  rpc CreateUser (UserRequest) returns (UserResponse);
+  rpc Deposit (DepositRequest) returns (DepositResponse);
+  rpc GetBalance (BalanceRequest) returns (BalanceResponse);
+}
+
+message UserRequest {
+  string username = 1;
+}
+
+message UserResponse {
+  string message = 1;
+}
+
+message DepositRequest {
+  string username = 1;
+  double amount = 2;
+}
+
+message DepositResponse {
+  string message = 1;
+  double balance = 2;
+}
+
+message BalanceRequest {
+  string username = 1;
+}
+
+message BalanceResponse {
+  double balance = 1;
+}
