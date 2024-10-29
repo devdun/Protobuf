@@ -19,7 +19,7 @@ describe('Banking Service - Security Test', () => {
   it('should reject unauthorized deposit attempt', (done) => {
     unauthorizedClient.deposit({ username: 'unknownUser', amount: 100 }, (err: any, response: any) => {
       expect(err).not.toBeNull();
-      expect(err.code).toBe(grpc.status.UNAUTHENTICATED); // Assuming you have implemented authentication
+      expect(err.code).toBe(grpc.status.UNAUTHENTICATED);
       done();
     });
   });
