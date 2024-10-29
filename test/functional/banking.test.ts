@@ -1,10 +1,10 @@
 import * as grpc from '@grpc/grpc-js';
 import * as protoLoader from '@grpc/proto-loader';
 import * as path from 'path';
-import { mockCreateUser, mockDeposit, mockGetBalance } from '../src/mockServices';
+import { mockCreateUser, mockDeposit, mockGetBalance } from '../../src/mockServices';
 import * as sinon from 'sinon';
 
-const PROTO_PATH = path.join(__dirname, '../proto/banking.proto');
+const PROTO_PATH = path.join(__dirname, '../../proto/banking.proto');
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
   keepCase: true,
   longs: String,
@@ -19,14 +19,14 @@ const client = new bankingProto.BankingService('127.0.0.1:50051', grpc.credentia
 jest.setTimeout(20000); // Increase the default timeout to handle potential network delay
 
 describe('Banking Service', () => {
-  beforeEach(() => {
+  beforeAll(() => {
     // Replace actual client methods with mocks
     sinon.replace(client, 'createUser', mockCreateUser);
     sinon.replace(client, 'deposit', mockDeposit);
     sinon.replace(client, 'getBalance', mockGetBalance);
   });
 
-  afterEach(() => {
+  afterAll(() => {
     // Restore original methods after tests
     sinon.restore();
   });

@@ -15,7 +15,7 @@ const unauthorizedClient = new bankingProto.BankingService('127.0.0.1:50051', gr
 
 jest.setTimeout(20000); // Set timeout to 20 seconds for the test
 
-describe('Banking Service - Security Test', () => {
+describe.only('Banking Service - Security Test', () => {
   it('should reject unauthorized deposit attempt', (done) => {
     unauthorizedClient.deposit({ username: 'unknownUser', amount: 100 }, (err: any, response: any) => {
       expect(err).not.toBeNull();
